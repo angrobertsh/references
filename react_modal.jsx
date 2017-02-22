@@ -1,6 +1,6 @@
 // more info here: https://www.npmjs.com/package/react-modal
 
-// First, save react-modal into your npm modules
+// First, npm install react-modal --save into your npm modules
 // then in your component file have stuff like this
 
 import Modal from 'react-modal';
