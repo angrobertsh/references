@@ -1,4 +1,5 @@
 // first npm install animate.css --save
+// Full reference here https://github.com/daneden/animate.css
 
 // put this in your html header
 // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
