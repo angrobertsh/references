@@ -1,6 +1,9 @@
 // first npm install animate.css --save
 
-// Always include this somewhere in your file
+// put this in your html header
+// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+// Always include this somewhere in your js file
 
 whichTransitionEvent(){
   let t;
