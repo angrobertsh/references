@@ -1,0 +1,20 @@
+/*example*/
+
+@media only screen and (max-width: 800px) {
+  .itembox{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .itembox{
+    width: 60%;
+  }
+}
+
+
+/*Also for css altering sibling or other elements you use space, +, or ~*/
+
+#a:hover ~ #b {
+    background: #ccc
+}
