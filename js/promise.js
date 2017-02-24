@@ -49,7 +49,7 @@ getData('foo').then((resp) => {
 // two possibilities
 
 $.when(this.updateBounds(bounds)).then((resp) => {
-  this.requestAllBathrooms(filter)
+  this.requestAllBathrooms(this.props.filters)
 })
 
-$.when(this.updateBounds(bounds)).then(this.requestAllBathrooms(filter));
+$.when(this.updateBounds(bounds)).then(this.requestAllBathrooms(this.props.filters));
