@@ -1,3 +1,7 @@
+# Validating booleans
+
+validates :active, inclusion: { in: [ true, false ] }
+
 # Validating overlaps
 
 validate :overlapping_inquiries
