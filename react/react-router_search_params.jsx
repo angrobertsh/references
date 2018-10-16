@@ -13,6 +13,7 @@ handleClick(coords) {
 }
 
 // In the new container
+// remember, second param is ownProps
 
 const mapStateToProps = (state, { location }) => ({
   lat: new URLSearchParams(location.search).get('lat'),

@@ -53,3 +53,7 @@ $.when(this.updateBounds(bounds)).then((resp) => {
 })
 
 $.when(this.updateBounds(bounds)).then(this.requestAllBathrooms(this.props.filters));
+
+// Promise.all exists and takes an array of promises and returns an array of results when all are completed
+
+// you can also save promises and then .resolve them whenever so you don't have to re-make calls
