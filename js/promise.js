@@ -12,6 +12,12 @@ myFirstPromise.then( (successMessage) => {
     console.log("Yay! " + successMessage);
 });
 
+// This prints [3, 4] after 10000 ms
+Promise.all([new Promise((resolve, reject) => {setTimeout(() => {resolve(3)}, 1000)}), new Promise((resolve, reject) => {setTimeout(() => {resolve(4)}, 10000)})]).then((arr) => console.log(arr))
+
+// This prints 3 after 1000 ms
+Promise.race([new Promise((resolve, reject) => {setTimeout(() => {resolve(3)}, 1000)}), new Promise((resolve, reject) => {setTimeout(() => {resolve(4)}, 10000)})]).then((arr) => console.log(arr))
+
 // jQuery version because Promise isn't supported in IE
 
 const function1 = () => {
@@ -54,6 +60,28 @@ $.when(this.updateBounds(bounds)).then((resp) => {
 
 $.when(this.updateBounds(bounds)).then(this.requestAllBathrooms(this.props.filters));
 
-// Promise.all exists and takes an array of promises and returns an array of results when all are completed
-
 // you can also save promises and then .resolve them whenever so you don't have to re-make calls
+
+export const fetchAutocompleteValues = (params) => {
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      url: "/admin/autocompletes/",
+      data: {filterType: params.filterType, filter: params.filter},
+      method: "GET",
+      dataType: "json"
+    }).then(response => resolve(response))
+  });
+}
+
+var promises = {};
+
+var filterType = e.target.value;
+if(promises[filterType]){  
+} else {
+  promises[filterType] = fetchAutocompleteValues({filterType: filterType, filter: "thingees"});
+}
+promises[filterType] = (typeof promises[filterType] !== "undefined" ? promises[filterType] : fetchAutocompleteValues({filterType: filterType, filter: "thingees"}));
+
+var list;
+promises[query].then(values => list = values);
+console.log(list);
